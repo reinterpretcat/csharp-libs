@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{4B85469B-A41F-4E31-A7F1-C7337A78DC6A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>StraightSkeletonNet</RootNamespace>
+    <AssemblyName>StraightSkeletonNet</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Circular\CircularList.cs" />
+    <Compile Include="Circular\CircularNode.cs" />
+    <Compile Include="Circular\Edge.cs" />
+    <Compile Include="Circular\Vertex.cs" />
+    <Compile Include="EdgeResult.cs" />
+    <Compile Include="Events\Chains\ChainType.cs" />
+    <Compile Include="Events\Chains\EdgeChain.cs" />
+    <Compile Include="Events\Chains\IChain.cs" />
+    <Compile Include="Events\Chains\SingleEdgeChain.cs" />
+    <Compile Include="Events\Chains\SplitChain.cs" />
+    <Compile Include="Events\EdgeEvent.cs" />
+    <Compile Include="Events\MultiEdgeEvent.cs" />
+    <Compile Include="Events\MultiSplitEvent.cs" />
+    <Compile Include="Events\PickEvent.cs" />
+    <Compile Include="Events\SkeletonEvent.cs" />
+    <Compile Include="Events\SplitEvent.cs" />
+    <Compile Include="Events\VertexSplitEvent.cs" />
+    <Compile Include="LavUtil.cs" />
+    <Compile Include="Path\FaceNode.cs" />
+    <Compile Include="Path\FaceQueue.cs" />
+    <Compile Include="Path\FaceQueueUtil.cs" />
+    <Compile Include="Path\PathQueue.cs" />
+    <Compile Include="Path\PathQueueNode.cs" />
+    <Compile Include="Primitives\LineLinear2d.cs" />
+    <Compile Include="Primitives\PrimitiveUtils.cs" />
+    <Compile Include="Primitives\PriorityQueue.cs" />
+    <Compile Include="Primitives\Vector2d.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Skeleton.cs" />
+    <Compile Include="SkeletonBuilder.cs" />
+    <Compile Include="Primitives\LineParametric2d.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
