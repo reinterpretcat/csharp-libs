@@ -47,6 +47,7 @@
     <Compile Include="Disposables\SerialDisposable.cs" />
     <Compile Include="Disposables\SingleAssignmentDisposable.cs" />
     <Compile Include="Disposables\StableCompositeDisposable.cs" />
+    <Compile Include="System\CancellationToken.cs" />
     <Compile Include="System\EventPattern.cs" />
     <Compile Include="InternalUtil\AscynLock.cs" />
     <Compile Include="InternalUtil\ImmutableList.cs" />
