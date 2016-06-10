@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{72EE10A7-BDB1-4A33-990D-62EA88E2496E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>UtyDepend</RootNamespace>
+    <AssemblyName>UtyDepend</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Component.cs" />
+    <Compile Include="ComponentExtensions.cs" />
+    <Compile Include="Container.cs" />
+    <Compile Include="DependencyAttribute.cs" />
+    <Compile Include="DependencyException.cs" />
+    <Compile Include="Config\IConfigSection.cs" />
+    <Compile Include="Config\IConfigurable.cs" />
+    <Compile Include="Utils\Guard.cs" />
+    <Compile Include="IContainer.cs" />
+    <Compile Include="Interception\Behaviors\ExecuteBehavior.cs" />
+    <Compile Include="Interception\Behaviors\IBehavior.cs" />
+    <Compile Include="Interception\IInterceptor.cs" />
+    <Compile Include="Interception\IMethodReturn.cs" />
+    <Compile Include="Interception\InterceptionContext.cs" />
+    <Compile Include="Interception\InterfaceInterceptor.cs" />
+    <Compile Include="Interception\IProxy.cs" />
+    <Compile Include="Interception\MethodInvocation.cs" />
+    <Compile Include="Interception\MethodReturn.cs" />
+    <Compile Include="Interception\ProxyBase.cs" />
+    <Compile Include="Lifetime\ContainerLifetimeManager.cs" />
+    <Compile Include="Lifetime\ExternalLifetimeManager.cs" />
+    <Compile Include="Lifetime\ILifetimeManager.cs" />
+    <Compile Include="Lifetime\SingletonLifetimeManager.cs" />
+    <Compile Include="Lifetime\TransientLifetimeManager.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utils\ProxyGen.cs" />
+    <Compile Include="Utils\TypeHelper.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
