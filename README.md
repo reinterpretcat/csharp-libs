@@ -4,3 +4,4 @@ This repository contains different C# libraries which I use in different project
 
 * dependency - dependency injection container
 * straight_skeleton - straight skeleton implementation which is port of kendzi's implementation
+* utyrx - reactive extensions fork which is based on unirx fork.
