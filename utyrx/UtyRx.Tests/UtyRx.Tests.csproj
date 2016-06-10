@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D05558D9-A9C2-4B1B-85AD-7973F3373114}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>UtyRx.Tests</RootNamespace>
+    <AssemblyName>UtyRx.Tests</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="nunit.framework">
+      <HintPath>..\packages\NUnit.2.6.3\lib\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Operators\AggregateTest.cs" />
+    <Compile Include="Operators\ContinueWithTest.cs" />
+    <Compile Include="Operators\ConversionTest.cs" />
+    <Compile Include="Disposables\DisposableTest.cs" />
+    <Compile Include="Operators\DoTest.cs" />
+    <Compile Include="Operators\DurabilityTest.cs" />
+    <Compile Include="InternalUtil\MicroCoroutineTest.cs" />
+    <Compile Include="Observable\Observable.ConcatTest.cs" />
+    <Compile Include="Observable\Observable.ConcurrencyTest.cs" />
+    <Compile Include="Observable\Observable.ErrorHandlingTest.cs" />
+    <Compile Include="Observable\Observable.Events.cs" />
+    <Compile Include="Observable\Observable.GeneratorTest.cs" />
+    <Compile Include="Observable\Observable.PagingTest.cs" />
+    <Compile Include="Observable\Observable.TimeTest.cs" />
+    <Compile Include="Observable\ObservableTest.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="InternalUtil\QueueWorkerTest.cs" />
+    <Compile Include="Operators\RangeTest.cs" />
+    <Compile Include="Schedulers\SchedulerTest.cs" />
+    <Compile Include="Operators\SelectMany.cs" />
+    <Compile Include="Subjects\SubjectTest.cs" />
+    <Compile Include="Operators\TakeTest.cs" />
+    <Compile Include="Operators\ToTest.cs" />
+    <Compile Include="Utils\ChainingAssertion.cs" />
+    <Compile Include="Utils\TestUtil.cs" />
+    <Compile Include="Operators\WhenAllTest.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\UtyRx\UtyRx.csproj">
+      <Project>{f87bce71-0567-4fe1-83a3-2fd21ea8cd17}</Project>
+      <Name>UtyRx</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

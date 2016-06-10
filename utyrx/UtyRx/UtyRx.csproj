@@ -1,0 +1,186 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F87BCE71-0567-4FE1-83A3-2FD21EA8CD17}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>UtyRx</RootNamespace>
+    <AssemblyName>UtyRx</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Asynchronous\WebRequestExtensions.cs" />
+    <Compile Include="Disposables\BooleanDisposable.cs" />
+    <Compile Include="Disposables\CompositeDisposable.cs" />
+    <Compile Include="Disposables\DictionaryDisposable.cs" />
+    <Compile Include="Disposables\Disposable.cs" />
+    <Compile Include="Disposables\DisposableExtensions.cs" />
+    <Compile Include="Disposables\ICancelable.cs" />
+    <Compile Include="Disposables\MultipleAssignmentDisposable.cs" />
+    <Compile Include="Disposables\RefCountDisposable.cs" />
+    <Compile Include="Disposables\ScheduledDisposable.cs" />
+    <Compile Include="Disposables\SerialDisposable.cs" />
+    <Compile Include="Disposables\SingleAssignmentDisposable.cs" />
+    <Compile Include="Disposables\StableCompositeDisposable.cs" />
+    <Compile Include="System\EventPattern.cs" />
+    <Compile Include="InternalUtil\AscynLock.cs" />
+    <Compile Include="InternalUtil\ImmutableList.cs" />
+    <Compile Include="InternalUtil\ListObserver.cs" />
+    <Compile Include="InternalUtil\MicroCoroutine.cs" />
+    <Compile Include="InternalUtil\PriorityQueue.cs" />
+    <Compile Include="InternalUtil\ReflectionAccessor.cs" />
+    <Compile Include="InternalUtil\ScheduledItem.cs" />
+    <Compile Include="InternalUtil\ThreadSafeQueueWorker.cs" />
+    <Compile Include="System\Notification.cs" />
+    <Compile Include="Notifiers\BooleanNotifier.cs" />
+    <Compile Include="Notifiers\CountNotifier.cs" />
+    <Compile Include="Notifiers\MessageBroker.cs" />
+    <Compile Include="Notifiers\ScheduledNotifier.cs" />
+    <Compile Include="Observable\Observable.Aggregate.cs" />
+    <Compile Include="Observable\Observable.Binding.cs" />
+    <Compile Include="Observable\Observable.Blocking.cs" />
+    <Compile Include="Observable\Observable.Concatenate.cs" />
+    <Compile Include="Observable\Observable.Concurrency.cs" />
+    <Compile Include="Observable\Observable.Conversions.cs" />
+    <Compile Include="Observable\Observable.Creation.cs" />
+    <Compile Include="Observable\Observable.cs" />
+    <Compile Include="Observable\Observable.ErrorHandling.cs" />
+    <Compile Include="Observable\Observable.Events.cs" />
+    <Compile Include="Observable\Observable.FromAsync.cs" />
+    <Compile Include="Observable\Observable.Joins.cs" />
+    <Compile Include="Observable\Observable.Paging.cs" />
+    <Compile Include="Observable\Observable.Time.cs" />
+    <Compile Include="System\Observer.cs" />
+    <Compile Include="Operators\Aggregate.cs" />
+    <Compile Include="Operators\Amb.cs" />
+    <Compile Include="Operators\AsObservable.cs" />
+    <Compile Include="Operators\AsSingleUnitObservable.cs" />
+    <Compile Include="Operators\AsUnitObservable.cs" />
+    <Compile Include="Operators\Buffer.cs" />
+    <Compile Include="Operators\Cast.cs" />
+    <Compile Include="Operators\Catch.cs" />
+    <Compile Include="Operators\CombineLatest.cs" />
+    <Compile Include="Operators\Concat.cs" />
+    <Compile Include="Operators\ContinueWith.cs" />
+    <Compile Include="Operators\Create.cs" />
+    <Compile Include="Operators\DefaultIfEmpty.cs" />
+    <Compile Include="Operators\Defer.cs" />
+    <Compile Include="Operators\Delay.cs" />
+    <Compile Include="Operators\DelaySubscription.cs" />
+    <Compile Include="Operators\Dematerialize.cs" />
+    <Compile Include="Operators\Distinct.cs" />
+    <Compile Include="Operators\DistinctUntilChanged.cs" />
+    <Compile Include="Operators\Do.cs" />
+    <Compile Include="Operators\Empty.cs" />
+    <Compile Include="Operators\Finally.cs" />
+    <Compile Include="Operators\First.cs" />
+    <Compile Include="Operators\ForEachAsync.cs" />
+    <Compile Include="Operators\FromEvent.cs" />
+    <Compile Include="Operators\GroupBy.cs" />
+    <Compile Include="Operators\IgnoreElements.cs" />
+    <Compile Include="Operators\Last.cs" />
+    <Compile Include="Operators\Materialize.cs" />
+    <Compile Include="Operators\Merge.cs" />
+    <Compile Include="Operators\Never.cs" />
+    <Compile Include="Operators\ObserveOn.cs" />
+    <Compile Include="Operators\OfType.cs" />
+    <Compile Include="Operators\OperatorObservableBase.cs" />
+    <Compile Include="Operators\OperatorObserverBase.cs" />
+    <Compile Include="Operators\PairWise.cs" />
+    <Compile Include="Operators\Range.cs" />
+    <Compile Include="Operators\RefCount.cs" />
+    <Compile Include="Operators\Repeat.cs" />
+    <Compile Include="Operators\RepeatSafe.cs" />
+    <Compile Include="Operators\Return.cs" />
+    <Compile Include="Operators\Sample.cs" />
+    <Compile Include="Operators\Scan.cs" />
+    <Compile Include="Operators\Select.cs" />
+    <Compile Include="Operators\SelectMany.cs" />
+    <Compile Include="Operators\Single.cs" />
+    <Compile Include="Operators\Skip.cs" />
+    <Compile Include="Operators\SkipUntil.cs" />
+    <Compile Include="Operators\SkipWhile.cs" />
+    <Compile Include="Operators\Start.cs" />
+    <Compile Include="Operators\StartWith.cs" />
+    <Compile Include="Operators\SubscribeOn.cs" />
+    <Compile Include="Operators\Switch.cs" />
+    <Compile Include="Operators\Synchronize.cs" />
+    <Compile Include="Operators\SynchronizedObserver.cs" />
+    <Compile Include="Operators\Take.cs" />
+    <Compile Include="Operators\TakeLast.cs" />
+    <Compile Include="Operators\TakeUntil.cs" />
+    <Compile Include="Operators\TakeWhile.cs" />
+    <Compile Include="Operators\Throttle.cs" />
+    <Compile Include="Operators\ThrottleFirst.cs" />
+    <Compile Include="Operators\Throw.cs" />
+    <Compile Include="Operators\TimeInterval.cs" />
+    <Compile Include="Operators\Timeout.cs" />
+    <Compile Include="Operators\Timer.cs" />
+    <Compile Include="Operators\Timestamp.cs" />
+    <Compile Include="Operators\ToArray.cs" />
+    <Compile Include="Operators\ToList.cs" />
+    <Compile Include="Operators\ToObservable.cs" />
+    <Compile Include="Operators\Wait.cs" />
+    <Compile Include="Operators\WhenAll.cs" />
+    <Compile Include="Operators\Where.cs" />
+    <Compile Include="Operators\WithLatestFrom.cs" />
+    <Compile Include="Operators\Zip.cs" />
+    <Compile Include="Operators\ZipLatest.cs" />
+    <Compile Include="System\Pair.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Schedulers\Scheduler.CurrentThread.cs" />
+    <Compile Include="Schedulers\Scheduler.Immediate.cs" />
+    <Compile Include="Schedulers\IScheduler.cs" />
+    <Compile Include="Schedulers\Scheduler.cs" />
+    <Compile Include="Schedulers\Scheduler.Main.cs" />
+    <Compile Include="Schedulers\Scheduler.ThreadPool.cs" />
+    <Compile Include="Subjects\AsyncSubject.cs" />
+    <Compile Include="Subjects\BehaviorSubject.cs" />
+    <Compile Include="Subjects\ConnectableObservable.cs" />
+    <Compile Include="Subjects\ISubject.cs" />
+    <Compile Include="Subjects\ReplaySubject.cs" />
+    <Compile Include="Subjects\Subject.cs" />
+    <Compile Include="Subjects\SubjectExtensions.cs" />
+    <Compile Include="System\IObservable.cs" />
+    <Compile Include="System\IObserver.cs" />
+    <Compile Include="System\IOptimizedObservable.cs" />
+    <Compile Include="System\IProgress.cs" />
+    <Compile Include="System\Tuple.cs" />
+    <Compile Include="System\Unit.cs" />
+    <Compile Include="System\TimeInterval.cs" />
+    <Compile Include="System\Timestamped.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
