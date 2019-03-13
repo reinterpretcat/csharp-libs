@@ -35,7 +35,7 @@ namespace StraightSkeletonNet
             var size = startVertex.List.Size;
             var next = startVertex;
 
-            for (var i = 0; i < size - 1; i++)
+            for (var i = 0; i < size; i++)
             {
                 var current = next;
                 next = current.Next as Vertex;
