@@ -777,5 +777,37 @@ namespace StraightSkeletonNet.Tests
 
             SkeletonTestUtil.AssertExpectedPoints(expected, SkeletonTestUtil.GetFacePoints(sk));
         }
+
+        [Test]
+        public void SkeletonTestC1()
+        {
+            var polygon = new List<Vector2d>
+            {
+                new Vector2d(80.8806, -8.9725),
+                new Vector2d(81.0041, -8.8169),
+                new Vector2d(56.051, 72.1197),
+                new Vector2d(17.2096, 0.9978),
+                new Vector2d(16.475, -0.3011),
+                new Vector2d(15.0244, 0.2603),
+                new Vector2d(23.9762, 39.6003),
+                new Vector2d(-18.0879, 10.6703),
+                new Vector2d(-19.1437, 9.961),
+                new Vector2d(-20.173, 11.2989),
+                new Vector2d(8.0439, 36.0416),
+                new Vector2d(8.0445, 36.0529),
+                new Vector2d(23.813, 64.5547),
+                new Vector2d(-0.7203, 71.8831),
+                new Vector2d(-0.7564, 71.8911),
+                new Vector2d(-68.8682, 48.1444),
+                new Vector2d(-4.8991, 53.0675),
+                new Vector2d(-3.5566, 53.1622),
+                new Vector2d(-3.0501, 51.9918),
+                new Vector2d(-46.0636, 12.2109),
+                new Vector2d(13.8633, -67.41)
+            };
+
+            // just check that this runs without throwing an exception
+            var sk = SkeletonBuilder.Build(polygon);
+        }
     }
 }
